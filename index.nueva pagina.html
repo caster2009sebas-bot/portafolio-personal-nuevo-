@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMG Portafolio - Redes y Soporte Técnico</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#0A0A0A', // Fondo casi negro
+                        'dark-card': '#1a1a1a', // Gris muy oscuro para tarjetas
+                        'accent': '#1D701D', // VERDE OSCURO PROFESIONAL
+                        'text-light': '#E0E0E0', // Gris claro para texto
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos generales */
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* -------------------- */
+        /* Animación de Burbujas - Adaptada al verde oscuro */
+        /* -------------------- */
+        .bubble-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0; /* Asegura que el contenido esté encima */
+        }
+        .bubble {
+            position: absolute;
+            bottom: -150px;
+            width: 40px;
+            height: 40px;
+            /* Usando el nuevo verde oscuro #1D701D, transparente */
+            background: rgba(29, 112, 29, 0.15); 
+            border-radius: 50%;
+            animation: bubble-up 10s linear infinite;
+        }
+        /* Definición de la animación de las burbujas */
+        @keyframes bubble-up {
+            0% { transform: translateY(0) scale(0.5); opacity: 0.5; }
+            100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+        }
+        /* Variaciones de las burbujas para hacer el efecto más orgánico */
+        .bubble:nth-child(1) { left: 10%; animation-duration: 15s; width: 60px; height: 60px; }
+        .bubble:nth-child(2) { left: 20%; animation-duration: 8s; animation-delay: 2s; }
+        .bubble:nth-child(3) { left: 35%; animation-duration: 12s; width: 50px; height: 50px; animation-delay: 1s; }
+        .bubble:nth-child(4) { left: 50%; animation-duration: 10s; width: 80px; height: 80px; animation-delay: 4s; }
+        .bubble:nth-child(5) { left: 65%; animation-duration: 9s; animation-delay: 3s; }
+        .bubble:nth-child(6) { left: 75%; animation-duration: 13s; width: 70px; height: 70px; }
+        .bubble:nth-child(7) { left: 90%; animation-duration: 11s; animation-delay: 5s; }
+    </style>
+</head>
+<body class="bg-dark-bg text-text-light antialiased">
+
+    <!-- BARRA DE NAVEGACIÓN (HEADER) -->
+    <header class="sticky top-0 z-50 bg-dark-bg/90 backdrop-blur-sm shadow-xl shadow-black/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo: SMG con Imagen -->
+                <a href="#hero" class="flex items-center space-x-3 text-2xl font-bold tracking-wider text-accent transition duration-300 hover:text-white">
+                    <img src="uploaded:image_42e7a9.jpg-7fe252d4-da08-4172-a109-ce04bb3d3c28" 
+                         alt="Logo SMG Texto" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/40x40/1D701D/0A0A0A?text=SMG'" 
+                         class="w-10 h-10 object-cover rounded-full border-2 border-accent">
+                    <span>SMG</span>
+                </a>
+
+                <!-- Navegación de Escritorio -->
+                <nav class="hidden md:flex space-x-8 font-medium">
+                    <a href="#hero" class="text-text-light hover:text-accent transition duration-200">INICIO</a>
+                    <a href="#about" class="text-text-light hover:text-accent transition duration-200">SOBRE MÍ</a>
+                    <a href="#services" class="text-text-light hover:text-accent transition duration-200">SERVICIOS</a>
+                    <a href="#portfolio" class="text-text-light hover:text-accent transition duration-200">PORTAFOLIO</a>
+                    <a href="#contact" class="text-text-light hover:text-accent transition duration-200">CONTACTO</a>
+                </nav>
+
+                <!-- Botón de Menú Móvil (Opcional) -->
+                <button class="md:hidden p-2 rounded-md hover:bg-gray-800 transition duration-200">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECCIÓN 1: HERO / INTRODUCCIÓN (Con Animación de Burbujas) -->
+        <section id="hero" class="min-h-[85vh] flex items-center pt-24 pb-12 relative bg-dark-bg">
+            <!-- Contenedor de Burbujas de Fondo -->
+            <div class="bubble-container">
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center relative z-10">
+                <!-- Columna de Texto -->
+                <div class="space-y-6">
+                    <p class="text-accent text-lg font-semibold uppercase tracking-widest">HOLA, SOY</p>
+                    <h1 class="text-6xl sm:text-7xl lg:text-8xl font-extrabold leading-none text-white">
+                        <span class="block">Sebastian Menoscal</span>
+                        <span class="block text-accent">Redes y Soporte</span>
+                    </h1>
+                    <p class="text-lg text-gray-400 max-w-lg">
+                        Especialista en **Redes y Soporte Técnico** con la visión de crear soluciones digitales de alto impacto. Domino el desarrollo web y la gestión empresarial con estrategias de publicidad y contenido en plataformas como YouTube.
+                    </p>
+                    <a href="#portfolio" class="inline-block px-8 py-3 bg-accent text-dark-bg font-bold rounded-lg shadow-lg transition duration-300 transform hover:scale-[1.02] hover:bg-white">
+                        VER PROYECTOS
+                    </a>
+                </div>
+
+                <!-- Columna de Imagen (NUEVO LOGO DE TEXTO para la sección) -->
+                <div class="relative flex justify-center md:justify-end">
+                    <div class="w-full max-w-md aspect-square bg-dark-card rounded-xl overflow-hidden border-4 border-accent">
+                        <img src="uploaded:image_42e7a9.jpg-7fe252d4-da08-4172-a109-ce04bb3d3c28" 
+                             alt="Logo SMG Texto Grande" 
+                             class="w-full h-full object-cover opacity-90 p-12"> <!-- Añadí padding para que el texto se vea mejor en el recuadro -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SECCIÓN 2: SOBRE MÍ -->
+        <section id="about" class="py-20 bg-dark-card border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-12 items-start">
+
+                <!-- Columna de Identidad -->
+                <div class="relative h-full md:col-span-1">
+                    <div class="p-6 bg-dark-bg rounded-xl shadow-xl shadow-black/30 border border-gray-800">
+                        <div class="w-full aspect-square bg-dark-card rounded-lg mb-4 overflow-hidden">
+                            <img src="uploaded:image_42e7a9.jpg-7fe252d4-da08-4172-a109-ce04bb3d3c28" 
+                                 alt="Sebastian Menoscal Alvarado Logo Personal" 
+                                 class="w-full h-full object-cover p-8"> <!-- Añadí padding para que el texto se vea mejor en el recuadro -->
+                        </div>
+                        <p class="text-5xl font-extrabold tracking-tight text-white">Sebastian</p>
+                        <p class="text-3xl font-light text-accent mt-1">Menoscal Alvarado</p>
+                    </div>
+                </div>
+
+                <!-- Columna de Biografía y Detalles -->
+                <div class="md:col-span-2 space-y-8">
+                    <h2 class="text-4xl font-bold text-white mb-4">
+                        Hola, soy <span class="text-accent">SMG</span>
+                    </h2>
+                    <p class="text-lg text-gray-400">
+                        A mis **16 años**, combino mi pasión por la tecnología y la gestión. Soy experto en **Redes y Soporte Técnico**, asegurando que los sistemas funcionen sin fallas. Además, me destaco en el desarrollo de **páginas web** funcionales y en la **gestión de marcas** y publicidad digital, creando estrategias efectivas para el crecimiento en plataformas como YouTube.
+                    </p>
+
+                    <!-- Detalles de Contacto -->
+                    <div class="grid sm:grid-cols-2 gap-4 text-gray-300">
+                        <p><strong>Nombre:</strong> <span class="text-white">Sebastian Menoscal Alvarado</span></p>
+                        <p><strong>Edad:</strong> <span class="text-white">16 Años</span></p>
+                        <p><strong>Ubicación:</strong> <span class="text-white">Guayaquil, Ecuador</span></p>
+                        <p><strong>Email:</strong> <span class="text-white text-accent">tu.email@ejemplo.com</span></p>
+                        <p><strong>GitHub:</strong> <span class="text-white text-accent">github.com/tu-usuario</span></p>
+                        <p><strong>Especialidad:</strong> <span class="text-white text-accent">Redes y Soporte Técnico</span></p>
+                    </div>
+
+                    <button class="px-6 py-3 border border-accent text-accent font-semibold rounded-lg hover:bg-accent hover:text-dark-bg transition duration-300">
+                        DESCARGAR CV
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- SECCIÓN 3: MIS SERVICIOS (Ajustado a enfoque Tech/Soporte/Web) -->
+        <section id="services" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center text-white mb-4">MIS <span class="text-accent">COMPETENCIAS</span></h2>
+                <p class="text-lg text-center text-gray-400 mb-12">Servicios clave en tecnología, desarrollo web y gestión digital.</p>
+
+                <!-- Grid de Servicios -->
+                <div class="grid md:grid-cols-3 gap-8">
+
+                    <!-- Tarjeta de Servicio 1: Soporte Técnico -->
+                    <div class="p-6 bg-dark-card rounded-xl shadow-lg hover:shadow-gray-700/20 transition duration-300 border border-gray-800 hover:border-accent group">
+                        <div class="text-accent text-4xl mb-4 group-hover:scale-105 transition transform">🔧</div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Soporte Técnico Especializado</h3>
+                        <p class="text-gray-400">Diagnóstico, reparación y mantenimiento de hardware y software para garantizar el rendimiento óptimo.</p>
+                    </div>
+
+                    <!-- Tarjeta de Servicio 2: Administración de Redes -->
+                    <div class="p-6 bg-dark-card rounded-xl shadow-lg hover:shadow-gray-700/20 transition duration-300 border border-gray-800 hover:border-accent group">
+                        <div class="text-accent text-4xl mb-4 group-hover:scale-105 transition transform">🌐</div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Configuración y Seguridad de Redes</h3>
+                        <p class="text-gray-400">Implementación de redes locales (LAN) y configuración de seguridad para proteger la información y la conexión.</p>
+                    </div>
+
+                    <!-- Tarjeta de Servicio 3: Desarrollo de Páginas Web -->
+                    <div class="p-6 bg-dark-card rounded-xl shadow-lg hover:shadow-gray-700/20 transition duration-300 border border-gray-800 hover:border-accent group">
+                        <div class="text-accent text-4xl mb-4 group-hover:scale-105 transition transform">💻</div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Creación de Páginas Web</h3>
+                        <p class="text-gray-400">Desarrollo de sitios web responsive y visualmente atractivos, con enfoque en la experiencia del usuario.</p>
+                    </div>
+
+                    <!-- Tarjeta de Servicio 4: Gestión Empresarial -->
+                    <div class="p-6 bg-dark-card rounded-xl shadow-lg hover:shadow-gray-700/20 transition duration-300 border border-gray-800 hover:border-accent group">
+                        <div class="text-accent text-4xl mb-4 group-hover:scale-105 transition transform">💼</div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Estrategia y Gestión Empresarial</h3>
+                        <p class="text-gray-400">Asesoría en la gestión y organización de negocios, aplicando soluciones tecnológicas para la eficiencia.</p>
+                    </div>
+
+                    <!-- Tarjeta de Servicio 5: Publicidad Digital -->
+                    <div class="p-6 bg-dark-card rounded-xl shadow-lg hover:shadow-gray-700/20 transition duration-300 border border-gray-800 hover:border-accent group">
+                        <div class="text-accent text-4xl mb-4 group-hover:scale-105 transition transform">📢</div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Publicidad y Marketing Online</h3>
+                        <p class="text-gray-400">Creación y gestión de campañas publicitarias digitales efectivas, incluyendo contenido para YouTube.</p>
+                    </div>
+
+                    <!-- Tarjeta de Servicio 6: Optimización de YT/SEO -->
+                    <div class="p-6 bg-dark-card rounded-xl shadow-lg hover:shadow-gray-700/20 transition duration-300 border border-gray-800 hover:border-accent group">
+                        <div class="text-accent text-4xl mb-4 group-hover:scale-105 transition transform">🎬</div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Optimización de Contenido (YouTube)</h3>
+                        <p class="text-gray-400">Estrategias de SEO y producción de contenido para aumentar el alcance y la interacción en plataformas de video.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SECCIÓN 4: PORTAFOLIO / PROYECTOS -->
+        <section id="portfolio" class="py-20 bg-dark-card border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center text-white mb-4">MIS <span class="text-accent">PROYECTOS</span></h2>
+                <p class="text-lg text-center text-gray-400 mb-10">Explora mis 6 proyectos destacados en tecnología y gestión.</p>
+
+                <!-- Filtros de Proyectos -->
+                <div class="flex justify-center flex-wrap gap-3 mb-12">
+                    <button class="px-5 py-2 text-sm font-medium rounded-full bg-accent text-dark-bg shadow-lg transition duration-200">TODOS</button>
+                    <button class="px-5 py-2 text-sm font-medium rounded-full bg-dark-bg text-text-light border border-gray-700 hover:border-accent hover:text-accent transition duration-200">PÁGINAS WEB</button>
+                    <button class="px-5 py-2 text-sm font-medium rounded-full bg-dark-bg text-text-light border border-gray-700 hover:border-accent hover:text-accent transition duration-200">REDES/SOPORTE</button>
+                    <button class="px-5 py-2 text-sm font-medium rounded-full bg-dark-bg text-text-light border border-gray-700 hover:border-accent hover:text-accent transition duration-200">PUBLICIDAD/GESTIÓN</button>
+                </div>
+
+                <!-- Grid de Proyectos (6 enlaces actualizados) -->
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- PROYECTO 1: Aporte/ -->
+                    <a href="https://caster2009sebas-bot.github.io/Aporte-/" target="_blank" class="block group">
+                        <div class="relative overflow-hidden rounded-xl shadow-xl shadow-black/30 transform hover:scale-[1.03] transition duration-300 border border-gray-700 hover:border-accent">
+                            <img src="https://placehold.co/600x400/1a1a1a/1D701D?text=PÁGINA+APORTE" alt="Proyecto Aporte" class="w-full h-auto object-cover">
+                            <div class="absolute inset-0 bg-dark-bg bg-opacity-80 flex flex-col items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                                <h3 class="text-xl font-bold text-accent">Proyecto Web (Aporte)</h3>
+                                <p class="text-sm text-white">Categoría: Desarrollo Web</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- PROYECTO 2: Juego/ -->
+                    <a href="https://caster2009sebas-bot.github.io/Juego-/" target="_blank" class="block group">
+                        <div class="relative overflow-hidden rounded-xl shadow-xl shadow-black/30 transform hover:scale-[1.03] transition duration-300 border border-gray-700 hover:border-accent">
+                            <img src="https://placehold.co/600x400/1a1a1a/1D701D?text=JUEGO+INTERACTIVO" alt="Proyecto Juego" class="w-full h-auto object-cover">
+                            <div class="absolute inset-0 bg-dark-bg bg-opacity-80 flex flex-col items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                                <h3 class="text-xl font-bold text-accent">Juego Web Interactivo</h3>
+                                <p class="text-sm text-white">Categoría: Desarrollo Web</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- PROYECTO 3: actividad-de-cursor/ (Repetido, usando el segundo para mantener 6) -->
+                    <a href="https://caster2009sebas-bot.github.io/actividad-de-cursor/" target="_blank" class="block group">
+                        <div class="relative overflow-hidden rounded-xl shadow-xl shadow-black/30 transform hover:scale-[1.03] transition duration-300 border border-gray-700 hover:border-accent">
+                            <img src="https://placehold.co/600x400/1a1a1a/1D701D?text=EFECTOS+CURSOR+1" alt="Proyecto Actividad Cursor" class="w-full h-auto object-cover">
+                            <div class="absolute inset-0 bg-dark-bg bg-opacity-80 flex flex-col items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                                <h3 class="text-xl font-bold text-accent">Efecto de Cursor Interactivo</h3>
+                                <p class="text-sm text-white">Categoría: Desarrollo Web</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- PROYECTO 4: Juego1/ -->
+                    <a href="https://caster2009sebas-bot.github.io/Juego1/" target="_blank" class="block group">
+                        <div class="relative overflow-hidden rounded-xl shadow-xl shadow-black/30 transform hover:scale-[1.03] transition duration-300 border border-gray-700 hover:border-accent">
+                            <img src="https://placehold.co/600x400/1a1a1a/1D701D?text=SEGUNDO+JUEGO+WEB" alt="Proyecto Juego1" class="w-full h-auto object-cover">
+                            <div class="absolute inset-0 bg-dark-bg bg-opacity-80 flex flex-col items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                                <h3 class="text-xl font-bold text-accent">Juego Web (Versión 1)</h3>
+                                <p class="text-sm text-white">Categoría: Desarrollo Web</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- PROYECTO 5: portafolio-personal-/ -->
+                    <a href="https://caster2009sebas-bot.github.io/portafolio-personal-/" target="_blank" class="block group">
+                        <div class="relative overflow-hidden rounded-xl shadow-xl shadow-black/30 transform hover:scale-[1.03] transition duration-300 border border-gray-700 hover:border-accent">
+                            <img src="https://placehold.co/600x400/1a1a1a/1D701D?text=PORTAFOLIO+ANTERIOR" alt="Proyecto Portafolio Personal" class="w-full h-auto object-cover">
+                            <div class="absolute inset-0 bg-dark-bg bg-opacity-80 flex flex-col items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                                <h3 class="text-xl font-bold text-accent">Portafolio Personal Anterior</h3>
+                                <p class="text-sm text-white">Categoría: Desarrollo Web</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- PROYECTO 6: actividad-de-cursor/ (Usando el enlace repetido por tercera vez para el slot final) -->
+                    <a href="https://caster2009sebas-bot.github.io/actividad-de-cursor/" target="_blank" class="block group">
+                        <div class="relative overflow-hidden rounded-xl shadow-xl shadow-black/30 transform hover:scale-[1.03] transition duration-300 border border-gray-700 hover:border-accent">
+                            <img src="https://placehold.co/600x400/1a1a1a/1D701D?text=EFECTOS+CURSOR+2" alt="Proyecto Actividad Cursor 2" class="w-full h-auto object-cover">
+                            <div class="absolute inset-0 bg-dark-bg bg-opacity-80 flex flex-col items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                                <h3 class="text-xl font-bold text-accent">Demostración de Interacción</h3>
+                                <p class="text-sm text-white">Categoría: Desarrollo Web</p>
+                            </div>
+                        </div>
+                    </a>
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: ESTADÍSTICAS / DATOS -->
+        <section class="py-16 bg-dark-bg border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <!-- Stat 1 -->
+                    <div class="p-4">
+                        <p class="text-5xl font-extrabold text-accent">16</p>
+                        <p class="text-gray-400 mt-2">AÑOS DE EDAD</p>
+                    </div>
+                    <!-- Stat 2 -->
+                    <div class="p-4">
+                        <p class="text-5xl font-extrabold text-accent">6</p>
+                        <p class="text-gray-400 mt-2">PROYECTOS TOTALES</p>
+                    </div>
+                    <!-- Stat 3 -->
+                    <div class="p-4">
+                        <p class="text-5xl font-extrabold text-accent">3+</p>
+                        <p class="text-gray-400 mt-2">AÑOS DE EXPERIENCIA (EST.)</p>
+                    </div>
+                    <!-- Stat 4 -->
+                    <div class="p-4">
+                        <p class="text-5xl font-extrabold text-accent">4</p>
+                        <p class="text-gray-400 mt-2">ÁREAS DE ESPECIALIZACIÓN</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SECCIÓN 7: CONTACTO -->
+        <section id="contact" class="py-20 bg-dark-card border-t border-gray-800">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center text-white mb-4">HABLEMOS DE <span class="text-accent">TU NEGOCIO</span></h2>
+                <p class="text-lg text-center text-gray-400 mb-12">Cuéntame sobre tu proyecto de Redes, Web o Publicidad.</p>
+
+                <form class="space-y-6">
+                    <input type="text" placeholder="Tu Nombre" class="w-full p-4 rounded-lg bg-dark-bg border border-gray-700 focus:border-accent focus:ring-accent transition duration-200 placeholder-gray-500" required>
+                    <input type="email" placeholder="Tu Email" class="w-full p-4 rounded-lg bg-dark-bg border border-gray-700 focus:border-accent focus:ring-accent transition duration-200 placeholder-gray-500" required>
+                    <textarea placeholder="Describe tu proyecto (Redes, Web o Publicidad)" rows="6" class="w-full p-4 rounded-lg bg-dark-bg border border-gray-700 focus:border-accent focus:ring-accent transition duration-200 placeholder-gray-500" required></textarea>
+                    <div class="text-center">
+                        <button type="submit" class="px-10 py-4 bg-accent text-dark-bg font-bold rounded-lg shadow-lg hover:bg-white transition duration-300 transform hover:scale-[1.02]">
+                            ENVIAR MENSAJE
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA (FOOTER) -->
+    <footer class="py-8 bg-dark-bg border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <!-- GitHub -->
+                <a href="https://github.com/tu-usuario" target="_blank" class="text-gray-400 hover:text-accent transition duration-200" title="Mi GitHub">
+                    <span class="text-2xl">🐙</span>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/tu-perfil" target="_blank" class="text-gray-400 hover:text-accent transition duration-200" title="Mi LinkedIn">
+                    <span class="text-2xl">🔗</span>
+                </a>
+                <!-- YouTube/Red Social -->
+                <a href="https://youtube.com/c/tu-canal" target="_blank" class="text-gray-400 hover:text-accent transition duration-200" title="Mi Canal de YouTube">
+                    <span class="text-2xl">▶️</span>
+                </a>
+            </div>
+            <p class="text-sm text-gray-500">
+                &copy; 2024 Sebastian Menoscal Alvarado (SMG). Desarrollado con ❤️ y código.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
